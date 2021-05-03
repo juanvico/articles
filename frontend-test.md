@@ -1,3 +1,4 @@
+
 # Frontend testing 
 ---
 
@@ -125,7 +126,7 @@ There is no need to have a 100% of coverage. Theoretically, it's an excellent id
 Well, when you strive for 100% all the time, you find yourself spending time testing things that really don't need to be tested. 
 So striving for 100% of code coverage depends on many things. Let me try it to explain it with a graphic. 
 
-[Graphic image]
+![Testing-not-to-many](https://user-images.githubusercontent.com/19891817/116832062-94c8f800-ab89-11eb-9dc6-b2ec18d7ec1d.png)
 
 ### The sweet spot
 
@@ -142,7 +143,7 @@ If we consider two important factors that determinate wether we implement test o
 
 So let's go back a little bit to the trophy 🏆
 
-[Image trophy with money and time graphic]
+![Testing-not-to-many-Page-2](https://user-images.githubusercontent.com/19891817/116832104-d2c61c00-ab89-11eb-9e40-911948001ab1.png)
 
 Taking this in consideratin, you would tell me, so lets choose only the `Static` ones. It's obvious. They are the cheapest, and the fastest. 
 And yes, you are right. But we need to consider an important issue here, and it's `The problem that they solve`. 
@@ -150,7 +151,8 @@ And yes, you are right. But we need to consider an important issue here, and it'
 This is also known as the `confidence coefficient`. 
 In other words, statics tests solve the easiest problems and the end to end tests, the most bigger problems. 
 
-[Confidence coefficient image]
+![Testing-not-to-many-Page-3](https://user-images.githubusercontent.com/19891817/116832131-ebcecd00-ab89-11eb-99af-e53c5d359404.png)
+
 
 As the title of this sections ses, let's do `Mostly implementation details` because they are: 
 
