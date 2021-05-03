@@ -85,8 +85,9 @@ Making the implementation the same, but changing how it's implemented, would bre
 >"Every time I make a change to the code, the tests break!"
 <br>
 So testing implementations details would lead us to two possible scenarios: 
-1. Test can break when you refactor your code but still works in production **False-Negative**
-2. Test may not fail, but breaks the application **False-Positive**
+
+ 1. Test can break when you refactor your code but still works in production **False-Negative**
+ 2. Test may not fail, but breaks the application **False-Positive**
 <br>
 
 ### Tests should be deterministic
