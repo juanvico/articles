@@ -15,12 +15,13 @@ An essential question that maybe we are asked by our clients when we are buildin
 _Why should I invest my money in writing tests instead of using that time in working on new features?_
 
 In my opinion, that the most strong answer to this question is **CONFIDENCE**. That's right, we as developers need to be confident that the code that we are modifying doesn't break anything that it's already working. Imagine yourself going to the mechanic because the window of your car doesn't work correctly. And then when you receive the fixed window, it turns up that a door was broken. So the first thing that you would do is not bringing the car to that mechanic. So the client loses all types of confidence in us. And that's why we need to be confident; we need to have a safety net that protects us from breaking anything that was already working.
+
 Another important reason why we should write automated tests is **DOCUMENTATION**. Tests describe how the code should behave. So tests help us understand the business logic without entering on implementation details that may be confusing.
 
 ## What we should test? 🤔
 ***
 
-The testing pyramid (taken from the backend) describes the different types of tests that we could have on our application. 
+The testing pyramid describes the different types of tests that we could have on our application. 
 
 ![Testing pyramids](https://user-images.githubusercontent.com/19891817/116492018-9f298000-a871-11eb-9d4b-765612107e41.png)
 
@@ -61,8 +62,6 @@ And last but not least. We have **E2E** tests as necessary tests, but we all kno
 ***
 
 This section will go over some important considerations that we need to have when writing tests.
-
-This section will go over some important considerations that we need to have when writing tests. 
 
 ### Avoid testing internals
 
