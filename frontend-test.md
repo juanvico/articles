@@ -1,5 +1,5 @@
 
-# Frontend testing 
+# Thinking frontend testing
 ---
 
 ![7ucwd-440539-Full-Image_GalleryBackground-en-US-1589489689649 _SX1080_](https://user-images.githubusercontent.com/19891817/116832269-a1018500-ab8a-11eb-9f78-aa95422f1a9c.jpg)
