@@ -8,48 +8,42 @@
 In this article I'm going to try to explain why tests are one of the most important process that we need to considerate at the hour of working on a project. 
 
 ## Why we write automated tests? 
-
 ***
 
-This is an important question, that maybe we are asked by our clients when we are building an application. 
+An essential question that maybe we are asked by our clients when we are building an application.
 
-_Why should I invest my money on writing tests, insted of using that time in working on new features?_
+_Why should I invest my money in writing tests instead of using that time in working on new features?_
 
-In my opinion, that the most strong asnwer for this question, is **CONFIDENCE**. Thats right, we as developers need to be confident that the code that we are modifing, doesnt broke anything that was already built. Imagine yourself going to the mechanic because the window of your car doesnt work proppely. And then when you receive the fixed window, it turns up that a door is broken. So the first thing that you would do is not bringing the car to that mechanic. So the client looses all type of confidence with us. And that's why we need to be confidence, we need to have a safe net in order not to brake anything that was already working. 
-
-**Documentation**, tests describes how the code should behave. So tests help us understand the business logic without entering on implementation details that may be confuses. 
-
-
+In my opinion, that the most strong answer to this question is **CONFIDENCE**. That's right, we as developers need to be confident that the code that we are modifying doesn't break anything that it's already working. Imagine yourself going to the mechanic because the window of your car doesn't work correctly. And then when you receive the fixed window, it turns up that a door was broken. So the first thing that you would do is not bringing the car to that mechanic. So the client loses all types of confidence in us. And that's why we need to be confident; we need to have a safety net that protects us from breaking anything that was already working.
+Another important reason why we should write automated tests is **DOCUMENTATION**. Tests describe how the code should behave. So tests help us understand the business logic without entering on implementation details that may be confusing.
 
 ## What we should test? 🤔
-
 ***
 
-So we have this pyramid (taken from the backend) that describes the different types of tests that we could have on our application. 
+The testing pyramid (taken from the backend) describes the different types of tests that we could have on our application. 
 
 ![Testing pyramids](https://user-images.githubusercontent.com/19891817/116492018-9f298000-a871-11eb-9d4b-765612107e41.png)
 
-This pyramid represents the types of tests that should be included in an automated test suite. Representing, as well, the amount-importance that the type of test should appear. 
+This pyramid represents the types of tests that should be included in an automated test suite.
 
-| Type | Desciption | Tools
+| Type | Description | Tools
 | ---- | ------- | -----
-| Static | In charge of catching syntax errors, bad practices and incorrect use of API's. This ones are the most basics ones. | Prettier, Linting, TypeScript, Eslint.
-|Unit | This ones describes the business logic behaind the app. They could verify tricky algorthms. They run iosolated. | Jest
-| Integration | Give us confidence that all features of your app works correctly together. | React-testing-library, Jest, Enzyme. 
-| E2E | This ones verify that whe app works as a whole. It's a transversional tests, that includes frontend suach as backend. | Detox, Cypress|
+| Static | In charge of catching syntax errors, bad practices, and incorrect use of APIs. These are the most basics ones. | Prettier, Linting, TypeScript, Eslint.
+|Unit | These describe the business logic behind the app. They could verify tricky algorithms. They run isolated. | Jest
+| Integration | Give us confidence that all features of your app work correctly together. | React-testing-library, Jest, Enzyme. 
+| E2E | These verify that the app works as a whole. It's a transversional test that includes frontend such as backend. | Detox, Cypress|
 
-So this architecture works perfectly with a backend persepctive. But when it comes to frontend architecture maybe we should consider some other things. 
+So this architecture works perfectly with a backend perspective. But when it comes to frontend architecture, maybe we should consider some other things. 
 
-For example. When it comes to **Static** tests, these ones, works perfectly. We can have a TS project, with some fantastic ESlint, and so one, or even have PropTypes in order to avoid having bugs from the beginning. 
-But when we are talking about **Unit** tests.
+For example; When it comes to **Static** tests, these work perfectly well considering both; backend and frontend. We can have a TS project with some fantastic ESlint, and so on, or even have PropTypes to avoid having bugs from the beginning. 
+But when we are talking about **Unit** tests, we can ask ourselves some questions: 
 
 - Are they as effective as they are at the backend? 
-- Do we want to tests isoleted components? 
+- Do we want to tests isolated components? 
 
-What I'm trying to point out here is that testing isolated component turns up being pointless. I am not saying that Unit test is not important. In deed is very important but we need to be sure **what to tests,**  we dont want to be testing things that doesnt give us any confideence of the correctitud of our code. 
-Usually when it comes to componetns, we would want to test a whole Home screen, or in a carousel, when we click on the button it swithces to the next slide. 
-
-So perhaps we need to modify a little bit the pyramid tha we stole from the backend testing suite. 
+What I'm trying to point out here is that the isolated testing component turns up being pointless. I am not saying that Unit tests are not necessary. Indeed, they are significant, but we need to be sure **what to tests**. We don't want to be testing things that don't give us any confidence in the correctitude of our code. 
+Usually, when it comes to components, we would want to test a whole Home screen or a carousel; that when we click on the button, it switches to the next slide. In this case, testing separated the button with the carousel is pointless because I want them working as a unit. 
+So perhaps we need to modify a little bit the pyramid that we stole from the backend testing suite. 
 
 Let me introduce you to the ... 
 
@@ -58,51 +52,47 @@ Let me introduce you to the ...
 ![Testing pyramids-Page-2](https://user-images.githubusercontent.com/19891817/116492034-a81a5180-a871-11eb-9dbc-f443295e77b9.png)
 
 
-Here we could notice that **static** testing is still a big part of the testing in the frontend. 
-But then, we could see that **Unit** tesitng, although they **EXISTS!** but the are not in a huge amount as they were at the pyramid diagram. 
+Here we could notice that **static** testing is still a big part of the frontend testing. 
+But then, we could see that **Unit** testing, although they **EXISTS!** but the are not in a massive amount as they were at the pyramid diagram. 
 And then, we have **Integration** test as the winner of the tests 😂. (We will come back to this part later on.)
-ANd last but not least. e have **E2E** tests asi an important tests but we all know that they arent going to be as much as the integrations tests. 
-
-
+And last but not least. We have **E2E** tests as necessary tests, but we all know that they aren't going to be as much as the integrations tests. 
 
 ## Testing best practices 
-
-
 ***
 
-In this section we are going to go over some importas considerations that we need to have when writing tests. 
+This section will go over some important considerations that we need to have when writing tests.
 
-
+This section will go over some important considerations that we need to have when writing tests. 
 
 ### Avoid testing internals
 
-This is a very important concept, that I am going to take a couple of minutes trying to be as clear as possible. 
+I am going to take a couple of minutes trying to be as straightforward as possible. 
 
-So lets start defainign what _Avoid testing internals_ actually means. <br>
-Someone (I don't know who, but thanks anyway) ones said: 
+So let us start defining what _Avoid testing internals_ means.
+<br>
+Someone (I don't know who, but thanks anyway) said: 
 
-> "Good tests verify that the external behavior is correct but dont know any implementation details."
+> "Good tests verify that the external behavior is correct but don't know any implementation details."
 
-So how can we detect that we are testing implementations details? 
+So how can we detect that we are testing implementation details? 
 
-**If your test does something that the consumer of your code doesnt then itsl testing implementation details**
+**If your test does something that the consumer of your code doesn't, then it's testing implementation details**
 
-For example: Using a private function that we just exposed it just for the tests. 
+For example: Using a private function that we just exposed just for the tests. 
 
-**If a refactor brakes your tests, then it's testing implementations details**
+**If a refactor breaks your tests, then it's testing implementations details**
 
-Making the implementation the same, but changing how its implemented, would brake your tests. And this woould end up not liking writing tests.
+Making the implementation the same, but changing how it's implemented, would break your tests. And this would end up not liking writing tests.
 >"Every time I make a change to the code, the tests break!"
-
-<br> So testing implementations details would leed us to too posible scenarios: 
-1. Test can brake when you refactor your code, but still works in production **False-Negative**
-2. Test may not fail, but brakes the application **False-Positive**
-
+<br>
+So testing implementations details would lead us to two possible scenarios: 
+1. Test can break when you refactor your code but still works in production **False-Negative**
+2. Test may not fail, but breaks the application **False-Positive**
 <br>
 
 ### Tests should be deterministic
 
-> "A non deterministic test is a test that sometimes passes and somentimes doesnt"
+> "A non-deterministic test is a test that sometimes passes and sometimes doesn't."
 
 This happens for different resosn
  - Timezones 
@@ -111,7 +101,7 @@ This happens for different resosn
  - Shared states between tests
  - Timeouts
 
-### Avoid unneccesarry expectations and tests 
+### Avoid unnecessary expectations and tests 
 
 ```js
 
@@ -124,48 +114,42 @@ The first expectation is useless.
 
 ### 4) Not too many 
 
-There is no need to have a 100% of coverage. Theoretically, it's an excellent idea, but in practice it doesn't apply that much. 
-Well, when you strive for 100% all the time, you find yourself spending time testing things that really don't need to be tested. 
-So striving for 100% of code coverage depends on many things. Let me try it to explain it with a graphic. 
+There is no need to have a 100% of coverage. Theoretically, it's an excellent idea, but in practice, it doesn't apply that much. 
+Well, when you strive for 100% all the time, you find yourself spending time testing things that don't need to be tested. 
+So striving for 100% of code coverage depends on many things. Let me try to explain it with a graphic. 
 
 ![Testing-not-to-many](https://user-images.githubusercontent.com/19891817/116832062-94c8f800-ab89-11eb-9dc6-b2ec18d7ec1d.png)
 
-### The sweet spot
-
-This shows as how are we going to face our code coverage. 
-If we are a start up, and we need to implement many features on order to get founding, so then we would like to be more at left hand side of the sweet spot. 
-Or if we are a company, having thousands of user using your system, so the you would rather be at the right side of the sweet spot.
+This graphic shows us how we are going to face our code coverage. 
+If we are a start-up and need to implement many features to get funding, we would like to be more at the left-hand side of the sweet spot. 
+Or if we are a company having thousands of users using your system, you would rather be on the right side of the sweet spot.
 
 
-### 5) Mostly implementation tests 
+### 5) Mostly integration tests 
 
-So for now we have been talking about why we write tests, good practicies, and many other things, but one important thing that we didn't talk about is, `what should I test`? 
+So, for now, we have been talking about why we write tests, good practices, and many other things, but one crucial thing that we didn't talk about is, `what should I test`? 
 
-If we consider two important factors that determinate wether we implement test or we don't, we would have to think about `money`, and `time`. 
+If we consider two important factors that determine whether we implement tests or don't, we would have to think about `money` and `time`. 
 
-So let's go back a little bit to the trophy 🏆
+So let's go back a little bit to the trophy. 🏆
 
 ![Testing-not-to-many-Page-2](https://user-images.githubusercontent.com/19891817/116832104-d2c61c00-ab89-11eb-9e40-911948001ab1.png)
 
-Taking this in consideratin, you would tell me, so lets choose only the `Static` ones. It's obvious. They are the cheapest, and the fastest. 
-And yes, you are right. But we need to consider an important issue here, and it's `The problem that they solve`. 
-
-This is also known as the `confidence coefficient`. 
-In other words, statics tests solve the easiest problems and the end to end tests, the most bigger problems. 
+Considering this, you would tell me, so let's choose only the `Static` ones. It's obvious. They are the cheapest and the fastest. 
+And yes, you are right. But we need to consider an important issue here, and it's `The problem that does types of tests, solves`, also known as the `confidence coefficient`. 
+In other words, statics tests solve the most straightforward problems, and the end-to-end tests, the most more significant issues. 
 
 ![Testing-not-to-many-Page-3](https://user-images.githubusercontent.com/19891817/116832131-ebcecd00-ab89-11eb-99af-e53c5d359404.png)
 
-
-As the title of this sections ses, let's do `Mostly implementation details` because they are: 
-
+In a `confidence-coefficient-perspective, integration tests, in my opinion, is the best option. So as the title of this section says, `write mostly integration tests`. 
+They are: 
 - Cheap 
 - Fast 
 - And Solves most of the problems
 
 
-
 ## Conclusion
 
-In my opinion, you have to do as many tests as you feel confidence. The most reality things that you mock, the less confidence you will have. It's not a matter of code coverage, it's a matter of confidence. 
-Test higher up your tree, instead of testing specific component, try to test a hole page with all the components working together. 
+In my opinion, you have to do as many tests as you feel confident. The more things from the reality that you mock, the less confidence you will have. It's not a matter of code coverage; it's a matter of confidence. 
+Test higher up your tree; instead of testing a specific component, test a hole page with all the components working together. 
 
