@@ -23,6 +23,7 @@ In my opinion, that the most strong asnwer for this question, is **CONFIDENCE**.
 ***
 
 So we have this pyramid (taken from the backend) that describes the different types of tests that we could have on our application. 
+
 ![Testing pyramids](https://user-images.githubusercontent.com/19891817/116492018-9f298000-a871-11eb-9d4b-765612107e41.png)
 
 This pyramid represents the types of tests that should be included in an automated test suite. Representing, as well, the amount-importance that the type of test should appear. 
@@ -118,15 +119,49 @@ expect(obj).toHaveAProperty('prop1', 'prop2')
 
 The first expectation is useless. 
 
-
-
-
-
 ### 4) Not too many 
 
+There is no need to have a 100% of coverage. Theoretically, it's an excellent idea, but in practice it doesn't apply that much. 
+Well, when you strive for 100% all the time, you find yourself spending time testing things that really don't need to be tested. 
+So striving for 100% of code coverage depends on many things. Let me try it to explain it with a graphic. 
+
+[Graphic image]
+
+### The sweet spot
+
+This shows as how are we going to face our code coverage. 
+If we are a start up, and we need to implement many features on order to get founding, so then we would like to be more at left hand side of the sweet spot. 
+Or if we are a company, having thousands of user using your system, so the you would rather be at the right side of the sweet spot.
 
 
 ### 5) Mostly implementation tests 
 
+So for now we have been talking about why we write tests, good practicies, and many other things, but one important thing that we didn't talk about is, `what should I test`? 
+
+If we consider two important factors that determinate wether we implement test or we don't, we would have to think about `money`, and `time`. 
+
+So let's go back a little bit to the trophy 🏆
+
+[Image trophy with money and time graphic]
+
+Taking this in consideratin, you would tell me, so lets choose only the `Static` ones. It's obvious. They are the cheapest, and the fastest. 
+And yes, you are right. But we need to consider an important issue here, and it's `The problem that they solve`. 
+
+This is also known as the `confidence coefficient`. 
+In other words, statics tests solve the easiest problems and the end to end tests, the most bigger problems. 
+
+[Confidence coefficient image]
+
+As the title of this sections ses, let's do `Mostly implementation details` because they are: 
+
+- Cheap 
+- Fast 
+- And Solves most of the problems
+
+
+
 ## Conclusion
+
+In my opinion, you have to do as many tests as you feel confidence. The most reality things that you mock, the less confidence you will have. It's not a matter of code coverage, it's a matter of confidence. 
+Test higher up your tree, instead of testing specific component, try to test a hole page with all the components working together. 
 
