@@ -14,7 +14,7 @@ An essential question that maybe we are asked by our clients when we are buildin
 
 _Why should I invest my money in writing tests instead of using that time in working on new features?_
 
-In my opinion, that the most strong answer to this question is **CONFIDENCE**. That's right, we as developers need to be confident that the code that we are modifying doesn't break anything that it's already working. Imagine yourself going to the mechanic because the window of your car doesn't work correctly. And then when you receive the fixed window, it turns up that a door was broken. So the first thing that you would do is not bringing the car to that mechanic. So the client loses all types of confidence in us. And that's why we need to be confident; we need to have a safety net that protects us from breaking anything that was already working.
+The best answer to this question is **CONFIDENCE**. That's right, we as developers need to be confident that the code that we are modifying doesn't break anything that it's already working. Imagine yourself going to the mechanic because the window of your car doesn't work correctly. And then when you receive the fixed window, it turns up that a door was broken. So the first thing that you would do is not bringing the car to that mechanic anymore. So the client loses all types of confidence in us. And that's why we need to be confident; we need to have a safety net that protects us from breaking anything that was already working.
 
 Another important reason why we should write automated tests is **DOCUMENTATION**. Tests describe how the code should behave. So tests help us understand the business logic without entering on implementation details that may be confusing.
 
@@ -36,26 +36,23 @@ This pyramid represents the types of tests that should be included in an automat
 
 So this architecture works perfectly with a backend perspective. But when it comes to frontend architecture, maybe we should consider some other things. 
 
-For example; When it comes to **Static** tests, these work perfectly well considering both; backend and frontend. We can have a TS project with some fantastic ESlint, and so on, or even have PropTypes to avoid having bugs from the beginning. 
+For example; When it comes to **Static** tests, these work perfectly well considering both; backend and frontend. We can have a TS project with some fantastic TSlint, and so on, or even have PropTypes to avoid having bugs from the beginning. 
 But when we are talking about **Unit** tests, we can ask ourselves some questions: 
 
 - Are they as effective as they are at the backend? 
 - Do we want to tests isolated components? 
 
-What I'm trying to point out here is that the isolated testing component turns up being pointless. I am not saying that Unit tests are not necessary. Indeed, they are significant, but we need to be sure **what to tests**. We don't want to be testing things that don't give us any confidence in the correctitude of our code. 
-Usually, when it comes to components, we would want to test a whole Home screen or a carousel; that when we click on the button, it switches to the next slide. In this case, testing separated the button with the carousel is pointless because I want them working as a unit. 
-So perhaps we need to modify a little bit the pyramid that we stole from the backend testing suite. 
-
-Let me introduce you to the ... 
+What I'm trying to point out here is that the isolated testing component turns up being pointless. I am not saying that Unit tests are't necessary. Indeed, they are significant, but we need to be sure **what to tests**. We don't want to be testing things that don't give us any confidence in the correctitude of our code. 
+Usually, when it comes to components, we would want to test a whole Home screen or a Carousel; that when we click on the button, it switches to the next slide. In this case, testing separated the button with the carousel is pointless because I want them working as a unit. 
+So should have a different pespective for the pyramid that we stole from the backend testing suite. 
 
 ### TESTING TROPHY!! 🏆
 
 ![Testing pyramids-Page-2](https://user-images.githubusercontent.com/19891817/116492034-a81a5180-a871-11eb-9dbc-f443295e77b9.png)
 
-
-Here we could notice that **static** testing is still a big part of the frontend testing. 
-But then, we could see that **Unit** testing, although they **EXISTS!** but the are not in a massive amount as they were at the pyramid diagram. 
-And then, we have **Integration** test as the winner of the tests 😂. (We will come back to this part later on.)
+Here we notice that **static** testing is still a big part of the frontend testing. 
+When it comes to **Unit** testing, they **EXISTS!**; but, not in a massive amount as they were at the pyramid diagram. 
+**Integration** test is the winner of the tests 😂. (We will come back to this part later on.)
 And last but not least. We have **E2E** tests as necessary tests, but we all know that they aren't going to be as much as the integrations tests. 
 
 ## Testing best practices 
@@ -65,7 +62,7 @@ This section will go over some important considerations that we need to have whe
 
 ### Avoid testing internals
 
-I am going to take a couple of minutes trying to be as straightforward as possible. 
+We are going to take a couple of minutes trying to be as straightforward as possible. 
 
 So let us start defining what _Avoid testing internals_ means.
 <br>
@@ -81,7 +78,7 @@ For example: Using a private function that we just exposed just for the tests.
 
 **If a refactor breaks your tests, then it's testing implementations details**
 
-Making the implementation the same, but changing how it's implemented, would break your tests. And this would end up not liking writing tests.
+Making the implementation the same, but changing how it's implemented, would break your tests. In other words, when we do a refactor, the idea is to have the same functionality but with a different implementation. Suppose refactoring brakes tests turn up being a total pain to do a test. And this ends up with the programmers not enjoying writing tests.
 >"Every time I make a change to the code, the tests break!"
 <br>
 So testing implementations details would lead us to two possible scenarios: 
@@ -141,7 +138,7 @@ In other words, statics tests solve the most straightforward problems, and the e
 
 ![Testing-not-to-many-Page-3](https://user-images.githubusercontent.com/19891817/116832131-ebcecd00-ab89-11eb-99af-e53c5d359404.png)
 
-In a `confidence-coefficient-perspective, integration tests, in my opinion, is the best option. So as the title of this section says, `write mostly integration tests`. 
+In a `confidence-coefficient-perspective`, integration tests are the best option. So as the title of this section says, `write mostly integration tests`. 
 They are: 
 - Cheap 
 - Fast 
@@ -150,6 +147,6 @@ They are:
 
 ## Conclusion
 
-In my opinion, you have to do as many tests as you feel confident. The more things from the reality that you mock, the less confidence you will have. It's not a matter of code coverage; it's a matter of confidence. 
+Do as many tests as you feel confident. The more things from the reality that you mock, the less confidence you will have. It's not a matter of code coverage; it's a matter of confidence. 
 Test higher up your tree; instead of testing a specific component, test a hole page with all the components working together. 
 
