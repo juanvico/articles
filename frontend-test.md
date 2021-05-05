@@ -18,7 +18,7 @@ The best answer to this question is **CONFIDENCE**. That's right, we as develope
 
 Another important reason why we should write automated tests is **DOCUMENTATION**. Tests describe how the code should behave. So tests help us understand the business logic without entering on implementation details that may be confusing.
 
-## What we should test? 🤔
+## What should we test? 🤔
 ***
 
 The testing pyramid describes the different types of tests that we could have on our application. 
